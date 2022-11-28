@@ -6,7 +6,7 @@ export default function sidebar() {
     <div>
       <div>
         <ul>
-          <li className='breakline'><p>Home</p></li>
+          <li><p>Home</p></li>
           <li className='breakline'><p>Pages</p></li>
           <li className='breakline'><p>Format</p></li>
           <li>

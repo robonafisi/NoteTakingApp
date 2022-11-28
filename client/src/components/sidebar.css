@@ -26,10 +26,15 @@ p {
 .sidebuttons{
     width: 80px;
     margin-left: 10px;
-    margin-top: 5px;
+    margin-top: 8px;
 }
 
 .breakline{
     border-top: 0.7px solid rgb(163, 163, 163);
-    margin-left: 10px;
+}
+
+.sidebuttons1{
+    border-top: 0.7px solid rgb(163, 163, 163);
+    margin-right: 15px;
+    width: 80px;
 }
