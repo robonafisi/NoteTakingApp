@@ -6,10 +6,10 @@ export default function sidebar() {
     <div>
       <div>
         <ul>
-          <li><a class="active" href="#home">Home</a></li>
-          <li><p className='sidebar-section'>Pages</p></li>
-          <li><p className='sidebar-section'>Format</p></li>
-          <li><a href="#about">About</a></li>
+          <li><p>Home</p></li>
+          <li><p>Pages</p></li>
+          <li><p>Format</p></li>
+          <li><p>About</p></li>
         </ul>
       </div>
     </div>
