@@ -16,9 +16,20 @@ body {
 p {
     display: block;
     color: #000;
-    padding: 8px 16px;
+    padding: 0px 16px;
   }
 
 .sidebar-section {
     padding: 8px 16px;
   }
+
+.sidebuttons{
+    width: 80px;
+    margin-left: 10px;
+    margin-top: 5px;
+}
+
+.breakline{
+    border-top: 0.7px solid rgb(163, 163, 163);
+    margin-left: 10px;
+}
