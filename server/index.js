@@ -16,7 +16,7 @@ app.get('/', (req, res) => {
   res.send('Hello World!')
 })  
 
-
+//Open one specific page
 
 //Get the list of pages
 app.get('/pages', async(req, res)=>{
@@ -33,15 +33,15 @@ app.post('/newpage', async(req, res)=>{
   try {
     const { page_title, content, font_size, is_bold, is_italicised, is_colored } = req.body;
 
-    const newTodo = await pool.query(
+    const newPage = await pool.query(
       "INSERT INTO pages_central VALUES($1, $2, $3, $4, $5, $6) RETURNING *",
       [page_title, content, font_size, is_bold, is_italicised, is_colored]
     );
-    res.json(newTodo.rows[0]);
+    res.json(newPage);
   } catch (error) {
     console.error(err.message);
   }
-})
+});
 
 
 app.listen(5000, () => {
