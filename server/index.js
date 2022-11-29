@@ -17,16 +17,26 @@ app.get('/', (req, res) => {
 })  
 
 //Open one specific page
+app.get('/pages/:id', async(req,res)=>{
+  try {
+    const { id } = req.params;
+    const notepage = await pool.query("SELECT * FROM pages_central WHERE id = $1",[id]);
+
+    res.json(notepage.rows);
+  } catch (error) {
+    console.error(err.message);
+  }
+});
 
 //Get the list of pages
 app.get('/pages', async(req, res)=>{
   try {
-    const alltodos = await pool.query("SELECT * FROM pages_central");
-    res.json(alltodos.rows);
+    const allpages = await pool.query("SELECT * FROM pages_central");
+    res.json(allpages.rows);
   } catch (error) {
     console.error(err.message);
   }
-})
+});
 
 //Create a page with content
 app.post('/newpage', async(req, res)=>{
