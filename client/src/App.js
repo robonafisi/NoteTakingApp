@@ -13,6 +13,12 @@ export default function App(props) {
       <p>
         {props.body}
       </p>
+      <p>
+        {props.bodyparttwo}
+      </p>
+      <p>
+        {props.bodypartthree}
+      </p>
       </div>
       </div>
       </div>
