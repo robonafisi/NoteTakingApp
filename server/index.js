@@ -53,6 +53,17 @@ app.post('/newpage', async(req, res)=>{
   }
 });
 
+//Delete a page based on its ID
+app.delete("/deletepages/:id", async(req,res)=>{
+  try {
+    const { id } = req.params;
+    const deletePage = await pool.query("DELETE FROM pages_central WHERE id = $1",[id]);
+    res.json("Page was deleted!");
+  } catch (error) {
+    console.error(err.message);
+  }
+});
+
 
 app.listen(5000, () => {
     console.log("Server has started on port 5000");
