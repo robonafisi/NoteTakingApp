@@ -4,7 +4,7 @@ import './sidebar.css';
 
 export default function Sidebar() {
 
-  const [contentpages, setPages] = useState([]);
+  const [pages, setPages] = useState([]);
 
   const getContent = async() =>{
     try {
@@ -21,7 +21,7 @@ export default function Sidebar() {
     getContent();
   },[]);
 
-console.log(contentpages);
+  console.log(typeof pages)
 
   return (
     <div>
@@ -30,14 +30,13 @@ console.log(contentpages);
           <li><p>Home</p></li>
           <li className='breakline'>
             <p>Pages</p>
-            {contentpages.map(titlepages =>{
-              <p>{titlepages}</p>
-            })}
+            {pages.map(contentunit => (
+              <button className='page_list'>{contentunit.page_title}</button>
+            ))}
+            
           </li>
-          <li className='breakline'>
-            <p>Format</p>
-
-          </li>
+            
+          <li className='breakline'><p>Format</p></li>
           <li>
             <button className='sidebuttons'>Bold</button>
             <button className='sidebuttons'>Italicize</button>
