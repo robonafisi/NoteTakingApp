@@ -4,14 +4,14 @@ import './sidebar.css';
 
 export default function Sidebar() {
 
-  const [getPages, setPages] = useState([]);
+  const [contentpages, setPages] = useState([]);
 
   const getContent = async() =>{
     try {
       const response = await fetch("http://localhost:5000/pages");
       const jsonData = await response.json();
   
-      console.log(jsonData);
+      setPages(jsonData);
     } catch (err) {
       console.error(err.message);
     }
@@ -19,13 +19,21 @@ export default function Sidebar() {
   
   useEffect(()=>{
     getContent();
-  });
+  },[]);
+
+console.log(contentpages);
+
   return (
     <div>
       <div>
         <ul>
           <li><p>Home</p></li>
-          <li className='breakline'><p>Pages</p></li>
+          <li className='breakline'>
+            <p>Pages</p>
+            {contentpages.map(titlepages =>{
+              <p>{titlepages}</p>
+            })}
+          </li>
           <li className='breakline'>
             <p>Format</p>
 
