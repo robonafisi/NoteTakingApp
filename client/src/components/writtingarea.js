@@ -7,7 +7,7 @@ export default function writtingarea() {
 
   const [content, setContent] = useState([]);
 
-  const getContent = async() =>{
+  const getContent = async(e) =>{
     try {
       const response = await fetch(`http://localhost:5000/pages/${.content}`);
       const jsonData = await response.json();
