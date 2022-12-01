@@ -21,8 +21,6 @@ export default function Sidebar() {
     getContent();
   },[]);
 
-  console.log(typeof pages)
-
   return (
     <div>
       <div>
