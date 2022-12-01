@@ -19,6 +19,9 @@ export default function App(props) {
       <p>
         {props.bodypartthree}
       </p>
+      <p>
+        {props.bodypartfour}
+      </p>
       </div>
       </div>
       </div>
