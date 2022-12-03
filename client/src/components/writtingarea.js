@@ -1,26 +1,26 @@
-import React { useEffect, useState } from 'react';
+import React from 'react';
 import './writingarea.css';
 
 
 
-export default function writtingarea() {
+export default function Writtingarea() {
 
-  const [content, setContent] = useState([]);
+  //const [content, setContent] = useState([]);
 
-  const getContent = async() =>{
-    try {
-      const response = await fetch(`http://localhost:5000/pages/${.content}`);
-      const jsonData = await response.json();
+  // const getContent = async() =>{
+  //   try {
+  //     const response = await fetch(`http://localhost:5000/pages/${.content}`);
+  //     const jsonData = await response.json();
   
-      setPages(jsonData);
-    } catch (err) {
-      console.error(err.message);
-    }
-  };
+  //     setPages(jsonData);
+  //   } catch (err) {
+  //     console.error(err.message);
+  //   }
+  // };
   
-  useEffect(()=>{
-    getContent();
-  },[]);
+  // useEffect(()=>{
+  //   getContent();
+  // },[]);
 
   return (
     <div>

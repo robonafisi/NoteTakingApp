@@ -29,7 +29,9 @@ export default function Sidebar() {
           <li className='breakline'>
             <p>Pages</p>
             {pages.map(contentunit => (
-              <button className='page_list'>{contentunit.page_title}</button>
+              <button
+              className='page_list'
+              >{contentunit.page_title}</button>
             ))}
             
           </li>

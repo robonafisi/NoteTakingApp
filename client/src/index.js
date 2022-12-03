@@ -11,8 +11,8 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <Sidebar />
-    <App />
     <Writtingarea />
+    <App title = "Title One" body="The text body of all of this"/>
   </React.StrictMode>
 );
 

@@ -1,10 +1,22 @@
+import React from 'react'
 import './App.css';
 
-function App() {
+export default function App(props) {
   return (
-    <div className="App">
+    <div className='container text-center'>
+      <div>
+        <div>
+      <h1>
+        {props.title}
+      </h1>
+      <div>
+      <p>
+        {props.body}
+      </p>
+      </div>
+      </div>
+      </div>
     </div>
-  );
+  )
 }
 
-export default App;
