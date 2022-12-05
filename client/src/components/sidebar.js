@@ -7,14 +7,13 @@ export default function Sidebar() {
   const [pages, setPages] = useState([]);
 
   const pageSelect = () =>{
-    console.log("This is the messages");
+    console.log(pages);
   };
 
   const getContent = async() =>{
     try {
       const response = await fetch("http://localhost:5000/pages");
       const jsonData = await response.json();
-  
       setPages(jsonData);
     } catch (err) {
       console.error(err.message);
@@ -35,8 +34,8 @@ export default function Sidebar() {
             {pages.map(contentunit => (
               <button
               onClick={pageSelect}
-              className='page_list'
-              >{contentunit.page_title}</button>
+              className='page_list'>
+              {contentunit.page_title}</button>
             ))}
             
           </li>
