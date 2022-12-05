@@ -1,5 +1,6 @@
 import React from 'react'
 import './App.css';
+import PageSelect from './components/sidebar';
 
 
 export default function App(props) {
@@ -16,11 +17,27 @@ export default function App(props) {
   //     console.error(err.message);
   //   }
   // };
+  const getContent = async() =>{
+    try {
+      const response = await fetch("http://localhost:5000/pages",{
+        method: "GET",
+        headers: "",
+        body:
+      });
+      const jsonData = await response.json();
+      setPages(jsonData);
+    } catch (err) {
+      console.error(err.message);
+    }
+  };
 
   return (
     <div className='container text-center'>
       <div>
         <div>
+      <h1>
+        <PageSelect />
+      </h1>
       <h1>
         {props.title}
       </h1>
