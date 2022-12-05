@@ -6,6 +6,10 @@ export default function Sidebar() {
 
   const [pages, setPages] = useState([]);
 
+  const pageSelect = () =>{
+    console.log("This is the messages");
+  };
+
   const getContent = async() =>{
     try {
       const response = await fetch("http://localhost:5000/pages");
@@ -30,6 +34,7 @@ export default function Sidebar() {
             <p>Pages</p>
             {pages.map(contentunit => (
               <button
+              onClick={pageSelect}
               className='page_list'
               >{contentunit.page_title}</button>
             ))}
