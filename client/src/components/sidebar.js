@@ -7,7 +7,8 @@ export default function Sidebar() {
   const [pages, setPages] = useState([]);
 
   function PageSelect(id){
-    console.log(id);
+    console.log(pages);
+
   };
 
   const getContent = async() =>{
