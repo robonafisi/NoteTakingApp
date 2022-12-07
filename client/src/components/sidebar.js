@@ -7,9 +7,9 @@ export default function Sidebar() {
   const [pages, setPages] = useState([]);
 
   function PageSelect(id){
-    console.log(pages);
-
+    console.log(id);
   };
+
 
   const getContent = async() =>{
     try {
@@ -40,6 +40,7 @@ export default function Sidebar() {
               {contentunit.page_title}</button>
             ))}
             
+          
           </li>
             
           <li className='breakline'><p>Format</p></li>
