@@ -5,23 +5,6 @@ import './writingarea.css';
 
 export default function Writtingarea() {
 
-  //const [content, setContent] = useState([]);
-
-  // const getContent = async() =>{
-  //   try {
-  //     const response = await fetch(`http://localhost:5000/pages/${.content}`);
-  //     const jsonData = await response.json();
-  
-  //     setPages(jsonData);
-  //   } catch (err) {
-  //     console.error(err.message);
-  //   }
-  // };
-  
-  // useEffect(()=>{
-  //   getContent();
-  // },[]);
-
   return (
     <div>
     <div className='container inputcontainer'>

@@ -2,28 +2,12 @@ import React, { useEffect, useState } from 'react';
 import './sidebar.css';
 
 
-export default function Sidebar() {
 
-  const [pages, setPages] = useState([]);
+export default function Sidebar(props) {
 
   function PageSelect(id){
     console.log(id);
   };
-
-
-  const getContent = async() =>{
-    try {
-      const response = await fetch("http://localhost:5000/pages");
-      const jsonData = await response.json();
-      setPages(jsonData);
-    } catch (err) {
-      console.error(err.message);
-    }
-  };
-  
-  useEffect(()=>{
-    getContent();
-  },[]);
 
   return (
     <div>
@@ -32,7 +16,7 @@ export default function Sidebar() {
           <li><p>Home</p></li>
           <li className='breakline'>
             <p>Pages</p>
-            {pages.map(contentunit => (
+            {props.pages.map(contentunit => (
               <button
               id={contentunit.id}
               onClick={e => PageSelect(e.target.id)}

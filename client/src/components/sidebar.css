@@ -16,7 +16,7 @@ body {
 p {
     display: block;
     color: #000;
-    padding: 0px 16px;
+    padding: 0px 19px;
   }
 
 .sidebar-section {
@@ -43,4 +43,8 @@ p {
   margin-bottom: 5px;
   margin-left: 10px;
   width: 80px;
+}
+
+.testclass{
+  background-color: aquamarine;
 }
