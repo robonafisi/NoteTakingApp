@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import './sidebar.css';
-import App from './App.js';
 
 
 
@@ -8,7 +7,7 @@ export default function Sidebar(props) {
 
 
   function PageSelect(id){
-   
+   console.log("Child",id);
   };
 
   return (
@@ -21,7 +20,7 @@ export default function Sidebar(props) {
             {props.pages.map(contentunit => (
               <button
               id={contentunit.id}
-              onClick={e => setPages(e.target.id)}
+              onClick={e => this.props.setPages(e.target.id)}
               className='page_list'>
               {contentunit.page_title}</button>
             ))}

@@ -22,7 +22,7 @@ export default function App(props) {
     getContent();
   },[]);
 
-  
+  console.log("Parent",pages);
 
   return (
     <div>
