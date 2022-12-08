@@ -8,10 +8,11 @@ export default function App() {
 
   useEffect(() => {
     const fetchData = async () => {
-      const result = await fetch('http://localhost:3000/pages/10'),
+      const result = await fetch('http://localhost:5000/pages/10');
       const jsonresult = await  result.json();
       setInfo(jsonresult);
     }
+    fetchData();
   },[])
 
   console.log(info);
