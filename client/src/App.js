@@ -1,40 +1,25 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react'
 import './App.css';
-import Sidebar from './components/sidebar';
-import Writtingarea from './components/writtingarea';
 
 
 export default function App(props) {
 
-  const [pages, setPages] = useState([]);
-
-  const getContent = async() =>{
-    try {
-      const response = await fetch("http://localhost:5000/pages");
-      const jsonData = await response.json();
-      setPages(jsonData);
-    } catch (err) {
-      console.error(err.message);
-    }
-  };
+  // const getPageInfo = async e =>{
+  //   e.preventDefault();
+  //   try {
+  //     const body = {  };
+  //     const response = await fetch("http://localhost:5000/pages");
+  //     const jsonData = await response.json();
   
-  useEffect(()=>{
-    getContent();
-  },[]);
-
-  console.log("Parent",pages);
+  //     setPages(jsonData);
+  //   } catch (err) {
+  //     console.error(err.message);
+  //   }
+  // };
 
   return (
-    <div>
-      <div>
-      <Sidebar pages={pages}/>
-      </div>
-    <div>
-      <Writtingarea />
-    </div>
     <div className='container text-center'>
       <div>
-      
         <div>
       <h1>
         {props.title}
@@ -46,8 +31,6 @@ export default function App(props) {
       </div>
       </div>
       </div>
-      </div>
     </div>
   )
 }
-
