@@ -6,8 +6,8 @@ export default function Sidebar() {
 
   const [pages, setPages] = useState([]);
 
-  const pageSelect = () =>{
-    console.log(pages);
+  const pageSelect = (id) =>{
+    console.log(id);
   };
 
   const getContent = async() =>{
@@ -33,7 +33,7 @@ export default function Sidebar() {
             <p>Pages</p>
             {pages.map(contentunit => (
               <button
-              onClick={pageSelect}
+              onClick={e => pageSelect(contentunit.id)}
               className='page_list'>
               {contentunit.page_title}</button>
             ))}
