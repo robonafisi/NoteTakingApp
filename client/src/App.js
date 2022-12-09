@@ -8,22 +8,23 @@ export default function App() {
 
   useEffect(() => {
     const fetchData = async () => {
-      const result = await fetch('http://localhost:5000/pages/10');
+      const result = await fetch('http://localhost:5000/pages/11');
       const jsonresult = await  result.json();
       setInfo(jsonresult);
     }
     fetchData();
   },[])
 
-  console.log(info);
-
   return (
     <div className='container text-center'>
       <div>
         <div>
-      <h1>
-        
-      </h1>
+        {info.map(information => (
+          <div>
+          <h1>{information.page_title}</h1>
+            <p>{information.content}</p>
+          </div>
+        ))}
       <div>
       <p>
         
