@@ -16,7 +16,7 @@ export default function App() {
   },[])
 
   return (
-    <div className='container text-center'>
+    <div className='container'>
       <div>
         <div>
         {info.map(information => (
