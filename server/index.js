@@ -30,11 +30,10 @@ app.post('/pagechange', (req, res)=>{
 //Open the page selected
 app.get('/main', async(req,res)=>{
   try {
-    const { id } = 11;
+    const { id } = req.params;
     const notepage = await pool.query("SELECT * FROM pages_central WHERE id = $1",[id]);
 
     res.json(notepage.rows);
-    console.log(notepage);
   } catch (error) {
     console.error(err.message);
   }
