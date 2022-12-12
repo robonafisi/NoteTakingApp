@@ -18,7 +18,7 @@ app.get('/', (req, res) => {
 })
 
 //Change the page selected
-app.post('/pagechange', (req, res)=>{
+app.post('/pagechange/:id', (req, res)=>{
   try {
     var { selectedid } = req.params;
   } catch (error) {
@@ -30,10 +30,10 @@ app.post('/pagechange', (req, res)=>{
 //Open the page selected
 app.get('/main', async(req,res)=>{
   try {
-    const { id } = req.params;
-    const notepage = await pool.query("SELECT * FROM pages_central WHERE id = $1",[id]);
+    const { id } = selectedid;
+    const maincontent = await pool.query("SELECT * FROM pages_central WHERE id = $1",[id]);
 
-    res.json(notepage.rows);
+    res.json(maincontent.rows);
   } catch (error) {
     console.error(err.message);
   }

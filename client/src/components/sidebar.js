@@ -6,8 +6,19 @@ export default function Sidebar() {
 
   const [pages, setPages] = useState([]);
 
-  const pageSelect = (id) =>{
-    console.log(id);
+  const pageSelect = async(id) =>{
+    try {
+      const requestOptions = {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ title: 'React POST Request Example' })
+    };
+    fetch('http://localhost:5000/pagechange/:id', requestOptions)
+        .then(response => response.json())
+        .then(data => this.setState({ postId: data.id }));
+    } catch (error) {
+      console.error(err.message);
+    }
   };
 
   const getContent = async() =>{
