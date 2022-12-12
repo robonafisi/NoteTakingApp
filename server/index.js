@@ -4,6 +4,7 @@ const app = express();
 //Cors is used to connect to the Postgres database
 const cors = require('cors');
 const pool = require('./db');
+var selectedid = pool.query("SELECT id FROM pages_central LIMIT 1");
 
 
 //Middlewares used
@@ -14,7 +15,30 @@ app.use(express.json());
 //Homepage
 app.get('/', (req, res) => {
   res.send('Hello World!')
-})  
+})
+
+//Change the page selected
+app.post('/pagechange', (req, res)=>{
+  try {
+    var { selectedid } = req.params;
+  } catch (error) {
+    console.error(err.message);
+  }
+})
+
+
+//Open the page selected
+app.get('/main', async(req,res)=>{
+  try {
+    const { id } = 11;
+    const notepage = await pool.query("SELECT * FROM pages_central WHERE id = $1",[id]);
+
+    res.json(notepage.rows);
+    console.log(notepage);
+  } catch (error) {
+    console.error(err.message);
+  }
+});
 
 //Open one specific page
 app.get('/pages/:id', async(req,res)=>{
