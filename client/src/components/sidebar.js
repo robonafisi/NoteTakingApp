@@ -6,21 +6,6 @@ export default function Sidebar() {
 
   const [pages, setPages] = useState([]);
 
-  const pageSelect = async(id) =>{
-    try {
-      const requestOptions = {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ title: 'React POST Request Example' })
-    };
-    fetch('http://localhost:5000/pagechange/:id', requestOptions)
-        .then(response => response.json())
-        .then(data => this.setState({ postId: data.id }));
-    } catch (error) {
-      console.error(err.message);
-    }
-  };
-
   const getContent = async() =>{
     try {
       const response = await fetch("http://localhost:5000/pages");
@@ -29,6 +14,21 @@ export default function Sidebar() {
     } catch (err) {
       console.error(err.message);
     }
+  };
+
+  async function fetchData(id) {
+    fetch('http://localhost:5000/pagechange',{
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        "id": id
+      }),
+    }).then(response => response.json())
+    .then(data => console.log(data));
+    
+
   };
   
   useEffect(()=>{
@@ -44,7 +44,7 @@ export default function Sidebar() {
             <p>Pages</p>
             {pages.map(contentunit => (
               <button
-              onClick={e => pageSelect(contentunit.id)}
+              onClick={e => fetchData(contentunit.id)}
               className='page_list'>
               {contentunit.page_title}</button>
             ))}

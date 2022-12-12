@@ -18,7 +18,7 @@ app.get('/', (req, res) => {
 })
 
 //Change the page selected
-app.post('/pagechange/:id', (req, res)=>{
+app.post('/pagechange', (req, res)=>{
   try {
     var { selectedid } = req.params;
   } catch (error) {
