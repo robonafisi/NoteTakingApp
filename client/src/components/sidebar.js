@@ -17,18 +17,24 @@ export default function Sidebar() {
   };
 
   async function fetchData(id) {
-    fetch('http://localhost:5000/pagechange',{
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({
-        "id": id
-      }),
-    }).then(response => response.json())
-    .then(data => console.log(data));
-    
+    try {
+      const http = require('http')
+      const data = JSON.stringify({
+        "id" : 11
+      });
+      const options = {
+        hostname : ,
+        path : ,
+        method : "POST",
+        header : {
+          'Content-Type':'application/json'
+        }
+      }
 
+
+    } catch (error) {
+      
+    }
   };
   
   useEffect(()=>{
