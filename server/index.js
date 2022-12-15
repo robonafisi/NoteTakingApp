@@ -35,6 +35,7 @@ app.get('/main', async(req,res)=>{
     const maincontent = await pool.query("SELECT * FROM pages_central WHERE id = $1",[id]);
 
     res.json(maincontent.rows);
+    console.log(maincontent);
   } catch (error) {
     console.error(err.message);
   }

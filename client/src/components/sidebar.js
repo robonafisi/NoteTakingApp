@@ -3,9 +3,11 @@ import './sidebar.css';
 
 
 export default function Sidebar() {
-
+  
+  //The state to keep track of the list of pages
   const [pages, setPages] = useState([]);
 
+  //Call the pages API to get the list of pages
   const getContent = async() =>{
     try {
       const response = await fetch("http://localhost:5000/pages");
@@ -16,23 +18,9 @@ export default function Sidebar() {
     }
   };
 
+  //Change the page on display(called the main page)
   async function fetchData(id) {
-    try {
-      fetch('http://localhost:5000/pagechange',{
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          "id": id
-        }),
-      }).then(response => response.json())
-      .then(data => console.log(data));
-      
-  
-    } catch (error) {
-      
-    }
+   
   };
   
   useEffect(()=>{
