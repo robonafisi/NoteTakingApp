@@ -21,6 +21,7 @@ app.get('/', (req, res) => {
 app.post('/pagechange', (req, res)=>{
   try {
     var { selectedid } = req.params;
+    console.log(selectedid);
   } catch (error) {
     console.error(err.message);
   }
