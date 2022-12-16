@@ -21,6 +21,9 @@ export default function Writtingarea() {
     <div>
         <button className='addsectionbutton'>Add Section</button>
     </div>
+    <div>
+      <h1>{page}</div>
+    </div>
     </div>
   )
 }
