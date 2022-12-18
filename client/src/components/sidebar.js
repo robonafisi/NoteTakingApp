@@ -1,11 +1,15 @@
 import React, { useEffect, useState } from 'react';
 import './sidebar.css';
+import WrittingArea from './writtingarea.js';
 
 
 export default function Sidebar() {
   
   //The state to keep track of the list of pages
   const [pages, setPages] = useState([]);
+
+  //The state to keep track of the 
+
 
   //Call the pages API to get the list of pages
   const getContent = async() =>{
@@ -17,11 +21,6 @@ export default function Sidebar() {
       console.error(err.message);
     }
   };
-
-  //Change the page on display(called the main page)
-  async function fetchData(id) {
-   
-  };
   
   useEffect(()=>{
     getContent();
@@ -30,13 +29,16 @@ export default function Sidebar() {
   return (
     <div>
       <div>
+        <WrittingArea contentBody={pageContent}/>
+      </div>
+      <div>
         <ul>
           <li><p>Home</p></li>
           <li className='breakline'>
             <p>Pages</p>
             {pages.map(contentunit => (
               <button
-              onClick={e => fetchData(contentunit.id)}
+              //onClick={}
               className='page_list'>
               {contentunit.page_title}</button>
             ))}
