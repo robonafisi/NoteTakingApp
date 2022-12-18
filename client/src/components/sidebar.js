@@ -8,8 +8,20 @@ export default function Sidebar() {
   //The state to keep track of the list of pages
   const [pages, setPages] = useState([]);
 
-  //The state to keep track of the 
+  //The state to keep track of the active page
+  const [activepage, setActivepage] = useState([]);
 
+  //Call the page API to get the active page
+  const getActivepage = async e =>{
+    e.preventDefault();
+    try {
+      const response = await fetch(`http://localhost:5000/pages/${idcode}`);
+      const jsonPagedata = await response.json();
+      setActivepage(jsonPagedata);
+    } catch (error) {
+      console.error(err.message);
+    }
+  };
 
   //Call the pages API to get the list of pages
   const getContent = async() =>{
@@ -29,7 +41,7 @@ export default function Sidebar() {
   return (
     <div>
       <div>
-        <WrittingArea contentBody={pageContent}/>
+        {/* <WrittingArea contentBody={pageContent}/> */}
       </div>
       <div>
         <ul>
@@ -38,7 +50,7 @@ export default function Sidebar() {
             <p>Pages</p>
             {pages.map(contentunit => (
               <button
-              //onClick={}
+              onClick={e => getActivepage(contentunit.id)}
               className='page_list'>
               {contentunit.page_title}</button>
             ))}
