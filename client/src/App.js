@@ -6,6 +6,7 @@ import Main from './components/main';
 function App() {
   const [notes, setNotes] = useState([]);
 
+  const 
 
   return (
     <div className="App">
