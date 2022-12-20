@@ -24,9 +24,7 @@ function sidebar({ notes, onAddNote }) {
             <h2>Formatting</h2>
         </div>
         <div>
-        <button onClick={onAddNote}>
-                Testing
-            </button>
+            <h1>Example</h1>
         </div>
     </div>
   )
