@@ -14,9 +14,6 @@ function main() {
             <input type="text"/>
             <input type="text"/>
         </div>
-        <div>
-            
-        </div>
     </div>
   )
 }
