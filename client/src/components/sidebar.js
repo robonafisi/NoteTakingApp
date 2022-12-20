@@ -1,30 +1,30 @@
 import React, { Fragment }  from 'react'
+import './sidebar.css';
 
-function sidebar({ notes, onAddNote }) {
+function sidebar({ notes }) {
 
   return (
-    <div>
+    <div className='main_div'>
         <div>
-        <h1>
+        <h3>
             Sidebar
-        </h1>
+        </h3>
         </div>
         <div>
-            <h2>Home</h2>
-        </div>
-        <div>
-            <h2>Notes</h2>
+            <h3>Notes</h3>
             {notes.map((note)=>(
                 <div>
-                 <h3>{note.page_title}</h3>
+                 <button id={note.id}>{note.page_title}</button>
                  </div>
             ))}
         </div>
         <div>
-            <h2>Formatting</h2>
-        </div>
-        <div>
-            <h1>Example</h1>
+            <h3>Formatting</h3>
+            <button>Bold</button>
+            <button>Italic</button>
+            <button>Bigger</button>
+            <button>Smaller</button>
+            <button>Highlight</button>
         </div>
     </div>
   )

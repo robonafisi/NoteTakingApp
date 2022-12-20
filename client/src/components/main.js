@@ -1,4 +1,5 @@
 import React from 'react'
+import './main.css';
 
 function main() {
 
@@ -12,6 +13,9 @@ function main() {
         <div>
             <input type="text"/>
             <input type="text"/>
+        </div>
+        <div>
+            
         </div>
     </div>
   )

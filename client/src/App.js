@@ -5,6 +5,7 @@ import Main from './components/main';
 
 function App() {
   const [notes, setNotes] = useState([]);
+  const [content, setContent] = useState([]);
 
   const getContent = async() =>{
     try {
@@ -23,7 +24,7 @@ function App() {
   return (
     <div className="App">
       <Sidebar notes={notes}/>
-      <Main />
+      <Main content={content}/>
     </div>
   );
 }
