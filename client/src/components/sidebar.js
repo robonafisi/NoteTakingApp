@@ -1,4 +1,4 @@
-import React, { Fragment }  from 'react'
+import React  from 'react'
 import './sidebar.css';
 
 function sidebar({ notes, activeNote, setactiveNote }) {
@@ -14,7 +14,7 @@ function sidebar({ notes, activeNote, setactiveNote }) {
             <h3>Notes</h3>
             {notes.map((note)=>(
                 <div>
-                 <button id={note.id} onClick={()=>setactiveNote(note.id)}>{note.page_title}</button>
+                 <button id={note.id} onClick={()=>setactiveNote(note)}>{note.page_title}</button>
                  </div>
             ))}
         </div>

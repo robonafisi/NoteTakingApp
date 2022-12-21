@@ -1,7 +1,7 @@
 import React from 'react'
 import './main.css';
 
-function main({ activeNote }) {
+function main({ notetaken }) {
 
   return (
     <div>
@@ -16,7 +16,8 @@ function main({ activeNote }) {
         </div>
         <div>
         <div>
-            <h1>{activeNote}</h1>
+            <h1>{notetaken.page_title}</h1>
+            <p>{notetaken.content}</p>
         </div>
         </div>
     </div>
