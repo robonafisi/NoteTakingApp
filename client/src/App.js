@@ -17,10 +17,6 @@ function App() {
     }
   } ;
 
-  const getActiveNote = async() => {
-  
-  }
-
   useEffect(()=>{
     getContent();
   });

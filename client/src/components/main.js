@@ -11,8 +11,11 @@ function main({ notetaken }) {
         </h1>
         </div>
         <div>
-            <input type="text"/>
-            <input type="text"/>
+            <form>
+                <input type="text"/>
+                <input type="text"/>
+                <submit>Save Note</submit>
+            </form>
         </div>
         <div>
         <div>
