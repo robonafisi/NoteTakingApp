@@ -1,7 +1,7 @@
 import React from 'react'
 import './main.css';
 
-function main() {
+function main({ activeNote }) {
 
   return (
     <div>
@@ -13,6 +13,11 @@ function main() {
         <div>
             <input type="text"/>
             <input type="text"/>
+        </div>
+        <div>
+        <div>
+            <h1>{activeNote}</h1>
+        </div>
         </div>
     </div>
   )
