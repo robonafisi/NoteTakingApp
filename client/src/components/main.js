@@ -10,23 +10,18 @@ function Main({ notetaken }) {
         try {
           const formtitle = {title};
           const formbody = {description};
-          var myHeaders = new Headers();
-          myHeaders.append("Content-Type", "application/json");
-    
-        var raw = JSON.stringify({
-          "page_title": formtitle,
-          "content": formbody,
-          "font_size": 12,
-          "is_bold": "TRUE",
-          "is_italicised": "FALSE",
-          "is_colored": "FALSE"
-            });
-          const response = fetch("http://localhost:5000/newpage",{
+        
+          const response = await fetch("http://localhost:5000/newpage",{
             method: "POST",
-            headers: myHeaders,
-            body: raw
+            headers: {"Content-Type": "application/json"},
+            body: JSON.stringify({"page_title": formtitle,
+            "content": formbody,
+            "font_size": 12,
+            "is_bold": "TRUE",
+            "is_italicised": "FALSE",
+            "is_colored": "FALSE"})
           })
-          console.log(response);
+          window.location= "/";
         } catch (error) {
           console.error(error.message);
         }
@@ -40,10 +35,10 @@ function Main({ notetaken }) {
         </h1>
         </div>
         <div>
-            <form>
-                <input type="text" name="title" placeholder="Note Title" onChange={e => onSubmitForm(e.target.value)}/>
-                <input type="text" name="description" placeholder="Note Description" onChange={e => onSubmitForm(e.target.value)}/>
-                <button type='submit'>Save Note</button>
+            <form onSubmit={onSubmitForm}>
+                <input type="text" placeholder='Page Title' value={title} onChange={e => setTitle(e.target.value)}/>
+                <input type="text" placeholder='Page Description' value={description} onChange={e => setDescription(e.target.value)}/>
+                <button className='btn btn-success'>Save Page</button>
             </form>
         </div>
         <div>

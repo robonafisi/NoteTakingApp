@@ -23,7 +23,7 @@ app.post('/pagechange', (req, res)=>{
     var { selectedid } = req.params;
     console.log(selectedid);
   } catch (error) {
-    console.error(err.message);
+    console.error(error.message);
   }
 })
 
