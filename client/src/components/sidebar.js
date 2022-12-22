@@ -20,7 +20,9 @@ function sidebar({ notes, activeNote, setactiveNote }) {
             <h3>Notes</h3>
             {notes.map((note)=>(
                 <div>
-                 <button className="mt-2" key={note.id} onClick={()=>setactiveNote(note)}>{note.page_title}</button><button onClick={()=> deletePage(note.id)} className='btn btn-danger btn-sm delete-button'>X</button>
+                 <button className="mt-2" key={note.id} onClick={()=>setactiveNote(note)}>{note.page_title}</button>
+                 <button onClick={()=> deletePage(note.id)} className='btn btn-warning btn-sm edit-button'>Edit</button>
+                 <button onClick={()=> deletePage(note.id)} className='btn btn-danger btn-sm delete-button'>X</button>
                  </div>
             ))}
         </div>

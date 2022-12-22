@@ -45,7 +45,10 @@ function Main({ notetaken }) {
         <br></br>
         <div>
         <div className='line'>
+          <div className='space'>
             <h1>{notetaken.page_title}</h1>
+          </div>
+          
             <p>{notetaken.content}</p>
         </div>
         </div>

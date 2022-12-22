@@ -4,4 +4,10 @@ body{
 
 .line{
     border-top: 1px solid black;
-    }
+}
+
+.space{
+    margin-bottom: 2%;
+    margin-top: 5%;
+}
+
