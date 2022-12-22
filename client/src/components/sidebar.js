@@ -14,6 +14,10 @@ function sidebar({ notes, activeNote, setactiveNote }) {
     }
   }
 
+  const editPage = async content => {
+    console.log(content)
+  }
+
   return (
     <div className='main_div'>
         <div>
@@ -21,7 +25,7 @@ function sidebar({ notes, activeNote, setactiveNote }) {
             {notes.map((note)=>(
                 <div>
                  <button className="mt-2" key={note.id} onClick={()=>setactiveNote(note)}>{note.page_title}</button>
-                 <button onClick={()=> deletePage(note.id)} className='btn btn-warning btn-sm edit-button'>Edit</button>
+                 <button onClick={()=> editPage(note)} className='btn btn-warning btn-sm edit-button'>Edit</button>
                  <button onClick={()=> deletePage(note.id)} className='btn btn-danger btn-sm delete-button'>X</button>
                  </div>
             ))}
