@@ -17,29 +17,6 @@ app.get('/', (req, res) => {
   res.send('Hello World!')
 })
 
-//Change the page selected
-app.post('/pagechange', (req, res)=>{
-  try {
-    var { selectedid } = req.params;
-    console.log(selectedid);
-  } catch (error) {
-    console.error(error.message);
-  }
-})
-
-
-//Open the page selected
-app.get('/main', async(req,res)=>{
-  try {
-    const { id } = selectedid;
-    const maincontent = await pool.query("SELECT * FROM pages_central WHERE id = $1",[id]);
-
-    res.json(maincontent.rows);
-    console.log(maincontent);
-  } catch (error) {
-    console.error(err.message);
-  }
-});
 
 //Open one specific page
 app.get('/pages/:id', async(req,res)=>{
@@ -66,11 +43,11 @@ app.get('/pages', async(req, res)=>{
 //Create a page with content
 app.post('/newpage', async(req, res)=>{
   try {
-    const { page_title, content, font_size, is_bold, is_italicised, is_colored } = req.body;
+    const { page_title, content} = req.body;
 
     const newPage = await pool.query(
-      "INSERT INTO pages_central VALUES($1, $2, $3, $4, $5, $6) RETURNING *",
-      [page_title, content, font_size, is_bold, is_italicised, is_colored]
+      "INSERT INTO pages_central VALUES($1, $2) RETURNING *",
+      [page_title, content]
     );
     res.json(newPage);
   } catch (error) {

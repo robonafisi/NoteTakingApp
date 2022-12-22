@@ -8,18 +8,14 @@ function Main({ notetaken }) {
     const onSubmitForm = async e =>{
         e.preventDefault();
         try {
-          const formtitle = {title};
-          const formbody = {description};
-        
+          const formtitle = title;
+          const formbody = description;
+          
           const response = await fetch("http://localhost:5000/newpage",{
             method: "POST",
             headers: {"Content-Type": "application/json"},
             body: JSON.stringify({"page_title": formtitle,
-            "content": formbody,
-            "font_size": 12,
-            "is_bold": "TRUE",
-            "is_italicised": "FALSE",
-            "is_colored": "FALSE"})
+            "content": formbody})
           })
           window.location= "/";
         } catch (error) {
