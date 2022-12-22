@@ -5,3 +5,7 @@
     height: 100%;
     overflow: auto;
 }
+
+.delete-button{
+    margin-left: 5px;
+}

@@ -23,8 +23,12 @@ function App() {
 
   return (
     <div className="App">
+      <div>
       <Sidebar notes={notes} activeNote={activeNote} setactiveNote={setactiveNote}/>
+      </div>
+      <div className='container'>
       <Main notetaken={activeNote}/>
+      </div>
     </div>
   );
 }
