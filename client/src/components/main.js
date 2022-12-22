@@ -41,13 +41,12 @@ function Main({ notetaken }) {
                 <button className='btn btn-success mt-3'>Save Page</button>
             </form>
         </div>
-        
+
         <br></br>
         <div>
-        <div>
+        <div className='line'>
             <h1>{notetaken.page_title}</h1>
             <p>{notetaken.content}</p>
-            <button className='btn btn-warning'>Edit</button>
         </div>
         </div>
     </div>
