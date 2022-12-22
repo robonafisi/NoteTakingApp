@@ -4,6 +4,9 @@ import './main.css';
 function Main({ notetaken }) {
     const [title, setTitle] = useState([]);
     const [description, setDescription] = useState([]);
+    
+    const [edittitle, setEdittitle] = useState(["Edit Title"]);
+    const [editcontent, setEditcontent] = useState(["Edit Content"]);
 
     const onSubmitForm = async e =>{
         e.preventDefault();
@@ -33,10 +36,10 @@ function Main({ notetaken }) {
         <div>
             <form onSubmit={onSubmitForm}>
                 <div className='container row justify-content-md-center'>
-                <input className="col-lg-10" type="text" placeholder='Page Title' value={title} onChange={e => setTitle(e.target.value)}/>
+                <input className="col-lg-10" type="text" placeholder='Page Title' onChange={e => setTitle(e.target.value)} required/>
                 </div>
                 <div className='container row justify-content-md-center mt-2'>
-                <textarea className="col-lg-10" type="textarea" placeholder='Page Content' value={description} onChange={e => setDescription(e.target.value)} rows="4" cols="50"> </textarea>
+                <textarea className="col-lg-10" placeholder='Page Content' onChange={e => setDescription(e.target.value)} rows="4" cols="50" required></textarea>
                 </div>
                 <button className='btn btn-success mt-3'>Save Page</button>
             </form>
@@ -48,7 +51,6 @@ function Main({ notetaken }) {
           <div className='space'>
             <h1>{notetaken.page_title}</h1>
           </div>
-          
             <p>{notetaken.content}</p>
         </div>
         </div>
