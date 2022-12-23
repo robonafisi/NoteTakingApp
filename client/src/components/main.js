@@ -40,7 +40,7 @@ function Main({ notetaken }) {
                 <div className='container row justify-content-md-center mt-2'>
                 <textarea className="col-lg-10" placeholder='Page Content' onChange={e => setDescription(e.target.value)} rows="4" cols="50" required></textarea>
                 </div>
-                <button className='btn btn-success mt-3'>Save Page</button>
+                <button className='btn btn-success mt-3 submit-button'>Save Page</button>
             </form>
         </div>
 
