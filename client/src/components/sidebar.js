@@ -15,7 +15,7 @@ function sidebar({ notes, activeNote, setactiveNote }) {
   }
 
   return (
-    <div className='main_div sidebar-shape'>
+    <div className='main_div'>
         <div>
           <div className='line-button mt-3'>
             <h3>Notes</h3>

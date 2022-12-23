@@ -63,7 +63,3 @@
 .delete-button-sidebar:hover{
     box-shadow: #fb6868 0 0 0 3px, transparent 0 0 0 0;
 }
-
-.sidebar-shape{
-    box-shadow: 3px 1px 20px 5px rgb(230, 230, 230);
-}
