@@ -1,11 +1,12 @@
 import React  from 'react'
 import './sidebar.css';
 
+
 function sidebar({ notes, activeNote, setactiveNote }) {
 
   const deletePage = async id => {
     try {
-      const deletePage = await fetch(`http://localhost:5000/deletepages/${id}`,{
+      await fetch(`http://localhost:5000/deletepages/${id}`,{
         method : "DELETE"
       });
     } catch (error) {
@@ -21,8 +22,8 @@ function sidebar({ notes, activeNote, setactiveNote }) {
           </div>
             {notes.map((note)=>(
                 <div className='mt-3'>
-                 <button className="mt-1" key={note.id} onClick={()=>setactiveNote(note)}>{note.page_title}</button>
-                 <button onClick={()=> deletePage(note.id)} className='btn btn-danger btn-sm delete-button'>X</button>
+                 <button className='button-sidebar' key={note.id} onClick={()=>setactiveNote(note)}>{note.page_title}</button>
+                 <button onClick={()=> deletePage(note.id)}>X</button>
                  </div>
             ))}
         </div>

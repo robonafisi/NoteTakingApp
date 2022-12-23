@@ -1,5 +1,6 @@
 import { React, useState } from 'react'
 import './main.css';
+import { Typography } from '@material-ui/core';
 
 function Main({ notetaken }) {
     const [title, setTitle] = useState([]);
