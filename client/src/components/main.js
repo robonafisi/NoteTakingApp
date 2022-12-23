@@ -4,9 +4,7 @@ import './main.css';
 function Main({ notetaken }) {
     const [title, setTitle] = useState([]);
     const [description, setDescription] = useState([]);
-    
-    const [edittitle, setEdittitle] = useState(["Edit Title"]);
-    const [editcontent, setEditcontent] = useState(["Edit Content"]);
+  
 
     const onSubmitForm = async e =>{
         e.preventDefault();
@@ -14,7 +12,7 @@ function Main({ notetaken }) {
           const formtitle = title;
           const formbody = description;
           
-          const response = await fetch("http://localhost:5000/newpage",{
+          await fetch("http://localhost:5000/newpage",{
             method: "POST",
             headers: {"Content-Type": "application/json"},
             body: JSON.stringify({"page_title": formtitle,
@@ -30,7 +28,7 @@ function Main({ notetaken }) {
     <div>
         <div>
         <h1>
-            Main
+            Welcome to My Note
         </h1>
         </div>
         <div>

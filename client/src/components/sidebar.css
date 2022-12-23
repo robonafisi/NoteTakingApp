@@ -13,3 +13,7 @@
 .edit-button{
     margin-left: 5px;
 }
+
+.line-button{
+    border-bottom: 1px solid black;
+}
