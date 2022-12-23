@@ -16,40 +16,54 @@
 
 .line-button{
     border-bottom: 1px solid black;
+    box-shadow: 3px 1px 10px 5px rgb(230, 230, 230);
 }
 
 
-
 .button-sidebar {
-  background-color: #FFFFFF;
-  border: 0;
-  border-radius: .5rem;
+  align-items: center;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: transparent 0 0 0 3px,rgba(18, 18, 18, .1) 0 6px 20px;
   box-sizing: border-box;
-  color: #111827;
-  font-family: "Inter var",ui-sans-serif,system-ui,-apple-system,system-ui,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
-  font-size: .875rem;
-  font-weight: 600;
-  line-height: 1.25rem;
-  padding: .75rem 1rem;
-  text-align: center;
-  text-decoration: none #D1D5DB solid;
-  text-decoration-thickness: auto;
-  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+  color: #121212;
   cursor: pointer;
+  display: inline-flex;
+  flex: 1 1 auto;
+  font-family: Inter,sans-serif;
+  font-size: 1.2rem;
+  font-weight: 700;
+  justify-content: center;
+  line-height: 1;
+  margin: 0;
+  outline: none;
+  padding: 0.7rem 0.9rem;
+  text-align: center;
+  text-decoration: none;
+  transition: box-shadow .2s,-webkit-box-shadow .2s;
+  white-space: nowrap;
+  border: 0;
   user-select: none;
   -webkit-user-select: none;
   touch-action: manipulation;
 }
 
 .button-sidebar:hover {
-  background-color: rgb(249,250,251);
+  box-shadow: #121212 0 0 0 3px, transparent 0 0 0 0;
 }
 
-.button-sidebar:focus {
-  outline: 2px solid transparent;
-  outline-offset: 2px;
+.delete-button-sidebar{
+    background-color: rgb(255, 102, 102);
+    border: none;
+    color: #fff;
+    border-radius: 7px;
+    margin-left: 5px;
 }
 
-.button-sidebar:focus-visible {
-  box-shadow: none;
+.delete-button-sidebar:hover{
+    box-shadow: #fb6868 0 0 0 3px, transparent 0 0 0 0;
+}
+
+.sidebar-shape{
+    box-shadow: 3px 1px 20px 5px rgb(230, 230, 230);
 }

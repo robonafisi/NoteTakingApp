@@ -15,7 +15,7 @@ function sidebar({ notes, activeNote, setactiveNote }) {
   }
 
   return (
-    <div className='main_div'>
+    <div className='main_div sidebar-shape'>
         <div>
           <div className='line-button mt-3'>
             <h3>Notes</h3>
@@ -23,7 +23,7 @@ function sidebar({ notes, activeNote, setactiveNote }) {
             {notes.map((note)=>(
                 <div className='mt-3'>
                  <button className='button-sidebar' key={note.id} onClick={()=>setactiveNote(note)}>{note.page_title}</button>
-                 <button onClick={()=> deletePage(note.id)}>X</button>
+                 <button className='delete-button-sidebar' onClick={()=> deletePage(note.id)}>X</button>
                  </div>
             ))}
         </div>
