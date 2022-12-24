@@ -1,10 +1,10 @@
 import { React, useState } from 'react'
 import './main.css';
-import { Typography } from '@material-ui/core';
 
-function Main({ notetaken }) {
+function Main({ notetaken, secondnote, thirdnote }) {
     const [title, setTitle] = useState([]);
     const [description, setDescription] = useState([]);
+    const [showResults, setShowResults] = useState(false);
   
 
     const onSubmitForm = async e =>{
@@ -51,6 +51,11 @@ function Main({ notetaken }) {
             <h1>{notetaken.page_title}</h1>
           </div>
             <p>{notetaken.content}</p>
+        </div>
+        <div>
+          <button >
+            Edit
+          </button>
         </div>
         </div>
     </div>
