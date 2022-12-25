@@ -2,7 +2,7 @@ import React  from 'react'
 import './sidebar.css';
 
 
-function sidebar({ notes, activeNote, setactiveNote }) {
+function sidebar({ notes, activeNote, setactiveNote, showResults, setShowResults }) {
 
   const deletePage = async id => {
     try {
@@ -22,7 +22,7 @@ function sidebar({ notes, activeNote, setactiveNote }) {
           </div>
             {notes.map((note)=>(
                 <div className='mt-3'>
-                 <button className='button-sidebar' key={note.id} onClick={()=>setactiveNote(note)}>{note.page_title}</button>
+                 <button className='button-sidebar' key={note.id} onClick={()=>{setactiveNote(note);setShowResults(!showResults);}}>{note.page_title}</button>
                  <button className='delete-button-sidebar' onClick={()=> deletePage(note.id)}>X</button>
                  </div>
             ))}

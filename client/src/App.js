@@ -6,6 +6,7 @@ import Main from './components/main';
 function App() {
   const [notes, setNotes] = useState([]);
   const [activeNote, setactiveNote] = useState([]);
+  const [showResults, setShowResults] = useState(false);
 
   const getContent = async() =>{
     try {
@@ -24,10 +25,10 @@ function App() {
   return (
     <div className="App">
       <div>
-      <Sidebar notes={notes} activeNote={activeNote} setactiveNote={setactiveNote}/>
+      <Sidebar notes={notes} activeNote={activeNote} setactiveNote={setactiveNote} showresults={showResults} setShowResults={setShowResults}/>
       </div>
       <div className='container'>
-      <Main notetaken={activeNote}/>
+      <Main notetaken={activeNote} editresults={showResults}/>
       </div>
     </div>
   );

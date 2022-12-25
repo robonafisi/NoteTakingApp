@@ -1,10 +1,10 @@
 import { React, useState } from 'react'
 import './main.css';
 
-function Main({ notetaken, secondnote, thirdnote }) {
+function Main({ notetaken, editresults }) {
     const [title, setTitle] = useState([]);
     const [description, setDescription] = useState([]);
-    const [showResults, setShowResults] = useState(false);
+    const [isEditMode, setIsEditMode] = useState(false);
   
 
     const onSubmitForm = async e =>{
@@ -24,6 +24,10 @@ function Main({ notetaken, secondnote, thirdnote }) {
           console.error(error.message);
         }
       };
+
+      const editPage = async() => {
+        setIsEditMode(!isEditMode);
+      }
 
   return (
     <div>
@@ -53,9 +57,7 @@ function Main({ notetaken, secondnote, thirdnote }) {
             <p>{notetaken.content}</p>
         </div>
         <div>
-          <button >
-            Edit
-          </button>
+      {editresults && <button className='edit-button' onClick={()=> editPage(notetaken.id)}>EDIT</button>}
         </div>
         </div>
     </div>
