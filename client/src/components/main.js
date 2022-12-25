@@ -4,7 +4,7 @@ import './main.css';
 function Main({ notetaken, editresults }) {
     const [title, setTitle] = useState([]);
     const [description, setDescription] = useState([]);
-    const [isEditMode, setIsEditMode] = useState(false);
+    const [isEditMode, setIsEditMode] = useState(true);
   
 
     const onSubmitForm = async e =>{
@@ -25,9 +25,10 @@ function Main({ notetaken, editresults }) {
         }
       };
 
-      const editPage = async() => {
+      const changeEditMode = async() => {
         setIsEditMode(!isEditMode);
-      }
+      };
+
 
   return (
     <div>
@@ -49,19 +50,39 @@ function Main({ notetaken, editresults }) {
         </div>
 
         <br></br>
-        <div>
-        <div className='line'>
-          <div className='space'>
-            <h1>{notetaken.page_title}</h1>
+    <div>
+      <div className='line'>
+        <div className='space'>
           </div>
-            <p>{notetaken.content}</p>
+        {isEditMode ?
+        <div>
+        <div>
+          <h1>{notetaken.page_title}</h1>
         </div>
         <div>
-      {editresults && <button className='edit-button' onClick={()=> editPage(notetaken.id)}>EDIT</button>}
-        </div>
-        </div>
+          <p>{notetaken.content}</p>
+        </div></div>:
+        <form onSubmit={onSubmitForm}>
+                <div>
+                <input type="text"/>
+                </div>
+                <div>
+                <textarea></textarea>
+                </div>
+                <button>Save Page</button>
+        </form>}
+
+      </div>
+      <div>
+          {editresults && <button className='edit-button' onClick={()=> changeEditMode(notetaken.id)}>EDIT</button>}
+      </div>
+    </div>
+    
     </div>
   )
 }
 
 export default Main;
+
+
+// {isEditMode ? <h1>Edit Mode is On</h1>:<h1>Edit Mode is Off</h1>}
