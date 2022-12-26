@@ -11,6 +11,11 @@ body{
     margin-top: 5%;
 }
 
+.thin-width{
+  width: 40%;
+  margin-left: 80px;
+}
+
 .submit-button {
   background-color: #cdffd6;
   border: 2px solid #422800;

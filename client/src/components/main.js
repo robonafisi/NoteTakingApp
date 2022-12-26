@@ -5,8 +5,8 @@ function Main({ notetaken, editresults }) {
     const [title, setTitle] = useState([]);
     const [description, setDescription] = useState([]);
     const [isEditMode, setIsEditMode] = useState(true);
-    const [editTitle, seteditTitle] = useState([]);
-    const [editDescription, seteditDescription] = useState([]);
+    const [editTitle, seteditTitle] = useState([notetaken.page_title]);
+    const [editDescription, seteditDescription] = useState([notetaken.content]);
   
 
     const onSubmitForm = async e =>{
@@ -80,16 +80,19 @@ function Main({ notetaken, editresults }) {
         </div>
         <div>
           <p>{notetaken.content}</p>
-        </div></div>:
-        <form onSubmit={pageUpdate(notetaken.id)}>
+        </div>
+        </div>:
+        <div className='thin-width'>
+        <form onSubmit={()=> pageUpdate(notetaken.id)}>
                 <div>
-                <input type="text" defaultValue={notetaken.page_title} onChange={e => seteditTitle(e.target.value)}/>
+                <input type="text" value={editTitle} onChange={e => seteditTitle(e.target.value)}/>
                 </div>
                 <div>
-                <textarea defaultValue={notetaken.content} onChange={e => seteditDescription(e.target.value)}></textarea>
+                <textarea value={editDescription} onChange={e => seteditDescription(e.target.value)}></textarea>
                 </div>
                 <button className='submit-button'>Save Edit</button>
-        </form>}
+        </form>
+        </div>}
 
       </div>
       <div>
