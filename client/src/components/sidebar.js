@@ -2,7 +2,7 @@ import React  from 'react'
 import './sidebar.css';
 
 
-function sidebar({ notes, activeNote, setactiveNote, showResults, setShowResults }) {
+function sidebar({ notes, setactiveNote, showResults, setShowResults }) {
 
   const deletePage = async id => {
     try {

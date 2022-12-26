@@ -1,12 +1,12 @@
 import { React, useState, useEffect} from 'react'
 import './main.css';
 
-function Main({ activeNote, editresults, setactiveNote, notes }) {
+function Main({ activeNote, editresults, setactiveNote }) {
     const [title, setTitle] = useState([]);
     const [description, setDescription] = useState([]);
-    const [isEditMode, setIsEditMode] = useState(true);
     const [editTitle, seteditTitle] = useState([]);
     const [editDescription, seteditDescription] = useState([]);
+    const [isEditMode, setIsEditMode] = useState(true);
 
 
     const onSubmitForm = async e =>{
@@ -64,6 +64,11 @@ function Main({ activeNote, editresults, setactiveNote, notes }) {
         <h1>
             Welcome to My Note
         </h1>
+        </div>
+        <div>
+          <h3>
+            Create a page Here:
+          </h3>
         </div>
         <div>
             <form onSubmit={onSubmitForm}>

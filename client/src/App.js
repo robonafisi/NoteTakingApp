@@ -25,10 +25,10 @@ function App() {
   return (
     <div className="App">
       <div>
-      <Sidebar notes={notes} activeNote={activeNote} setactiveNote={setactiveNote} showresults={showResults} setShowResults={setShowResults}/>
+      <Sidebar notes={notes} setactiveNote={setactiveNote} showresults={showResults} setShowResults={setShowResults}/>
       </div>
       <div className='container'>
-      <Main activeNote={activeNote} setactiveNote={setactiveNote} editresults={showResults} notes={notes}/>
+      <Main activeNote={activeNote} setactiveNote={setactiveNote} editresults={showResults}/>
       </div>
     </div>
   );
