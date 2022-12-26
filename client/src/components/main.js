@@ -27,6 +27,16 @@ function Main({ notetaken, editresults }) {
 
       const changeEditMode = async() => {
         setIsEditMode(!isEditMode);
+
+      };
+
+      const pageUpdate = async() => {
+        try {
+          setIsEditMode(false);
+          
+        } catch (error) {
+          
+        }
       };
 
 
@@ -64,17 +74,17 @@ function Main({ notetaken, editresults }) {
         </div></div>:
         <form onSubmit={onSubmitForm}>
                 <div>
-                <input type="text"/>
+                <input type="text" value={notetaken.page_title}/>
                 </div>
                 <div>
-                <textarea></textarea>
+                <textarea value={notetaken.content}></textarea>
                 </div>
-                <button>Save Page</button>
+                <button onClick={pageUpdate}>Save Page</button>
         </form>}
 
       </div>
       <div>
-          {editresults && <button className='edit-button' onClick={()=> changeEditMode(notetaken.id)}>EDIT</button>}
+          {isEditMode && editresults && <button className='edit-button' onClick={()=> changeEditMode(notetaken.id)}>EDIT</button>}
       </div>
     </div>
     
@@ -83,6 +93,3 @@ function Main({ notetaken, editresults }) {
 }
 
 export default Main;
-
-
-// {isEditMode ? <h1>Edit Mode is On</h1>:<h1>Edit Mode is Off</h1>}

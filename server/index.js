@@ -40,7 +40,7 @@ app.get('/pages', async(req, res)=>{
   }
 });
 
-//Create a page with content
+//Create a page
 app.post('/newpage', async(req, res)=>{
   try {
     const { page_title, content} = req.body;
@@ -52,6 +52,15 @@ app.post('/newpage', async(req, res)=>{
     res.json(newPage);
   } catch (error) {
     console.error(err.message);
+  }
+});
+
+//Update a page
+app.put("", async(req,res)=>{
+  try {
+    
+  } catch (error) {
+    
   }
 });
 
