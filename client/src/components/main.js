@@ -33,16 +33,11 @@ function Main({ activeNote, setactiveNote, showResults, setShowResults, notes })
       };
 
       useEffect(()=>{
-        console.log(activeNote);
-        if (activeNote.length === 0){
         fetch('http://localhost:5000/pages/firstpage')
           .then(response => response.json())
           .then(jsonData => setactiveNote(jsonData[0]))
-          .catch(error => console.error(error.message))}
-          else{
-            console.log("Hello");
-          }
-      },[]);
+          .catch(error => console.error(error.message))
+        },[showResults]);
 
       const pageUpdate = async id => {
         try {
