@@ -5,6 +5,8 @@ function Main({ notetaken, editresults }) {
     const [title, setTitle] = useState([]);
     const [description, setDescription] = useState([]);
     const [isEditMode, setIsEditMode] = useState(true);
+    const [editTitle, seteditTitle] = useState([]);
+    const [editDescription, seteditDescription] = useState([]);
   
 
     const onSubmitForm = async e =>{
@@ -32,8 +34,8 @@ function Main({ notetaken, editresults }) {
 
       const pageUpdate = async id => {
         try {
-          const edittitle = title;
-          const editbody = description;
+          const edittitle = editTitle;
+          const editbody = editDescription;
           await fetch(`http://localhost:5000/updatepage/${id}`,{
             method: "PUT",
             headers: {"Content-Type": "application/json"},
@@ -60,7 +62,7 @@ function Main({ notetaken, editresults }) {
                 <input className="col-lg-10" type="text" placeholder='Page Title' onChange={e => setTitle(e.target.value)} required/>
                 </div>
                 <div className='container row justify-content-md-center mt-2'>
-                <textarea className="col-lg-10" placeholder='Page Content' onChange={e => setDescription(e.target.value)} rows="4" cols="50" required></textarea>
+                <textarea className="col-lg-10" placeholder='Page Content' rows="4" cols="50" onChange={e => setDescription(e.target.value)} required></textarea>
                 </div>
                 <button className='btn btn-success mt-3 submit-button'>Save Page</button>
             </form>
@@ -81,10 +83,10 @@ function Main({ notetaken, editresults }) {
         </div></div>:
         <form onSubmit={pageUpdate(notetaken.id)}>
                 <div>
-                <input type="text" defaultValue={notetaken.page_title}/>
+                <input type="text" defaultValue={notetaken.page_title} onChange={e => seteditTitle(e.target.value)}/>
                 </div>
                 <div>
-                <textarea defaultValue={notetaken.content}></textarea>
+                <textarea defaultValue={notetaken.content} onChange={e => seteditDescription(e.target.value)}></textarea>
                 </div>
                 <button className='submit-button'>Save Edit</button>
         </form>}

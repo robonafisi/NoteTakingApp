@@ -59,9 +59,9 @@ app.post('/newpage', async(req, res)=>{
 app.put("/updatepage/:id", async(req,res)=>{
   try {
     const { id } = req.params;
-    const {title, content} = req.body;
+    const {page_title, content} = req.body;
     const updatePagehere = await pool.query("UPDATE pages_central SET page_title=$1, content=$2 WHERE id=$3",
-    [title, content, id]);
+    [page_title, content, id]);
   } catch (error) {
     console.error(error.message);
   }
