@@ -1,7 +1,7 @@
-import { React, useState} from 'react'
+import { React, useState, useEffect} from 'react'
 import './main.css';
 
-function Main({ activeNote, editresults }) {
+function Main({ activeNote, editresults, setactiveNote, notes }) {
     const [title, setTitle] = useState([]);
     const [description, setDescription] = useState([]);
     const [isEditMode, setIsEditMode] = useState(true);
@@ -32,6 +32,14 @@ function Main({ activeNote, editresults }) {
         seteditDescription(activeNote.content);
         setIsEditMode(!isEditMode);
       };
+
+      useEffect(()=>{
+        fetch('http://localhost:5000/pages/firstpage')
+          .then(response => response.json())
+          .then(jsonData => setactiveNote(jsonData[0]))
+          .catch(error => console.error(error.message))
+          
+      },[]);
 
       const pageUpdate = async id => {
         try {
