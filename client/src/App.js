@@ -7,7 +7,7 @@ function App() {
   const [notes, setNotes] = useState([]);
   const [showResults, setShowResults] = useState(false);
   const [activeNote, setactiveNote] = useState([]);
-  
+
   const getContent = async() =>{
     try {
       const response = await fetch("http://localhost:5000/pages");
@@ -17,7 +17,6 @@ function App() {
       console.error(error.message);
     }
   } ;
-
 
   useEffect(()=>{
     getContent();

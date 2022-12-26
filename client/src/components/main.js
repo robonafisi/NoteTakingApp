@@ -89,7 +89,7 @@ function Main({ activeNote, editresults }) {
                 <input className="title-input" type="text" defaultValue={editTitle} onChange={e => seteditTitle(e.target.value)}/>
                 </div>
                 <div>
-                <textarea className="content-input" defaultValue={editDescription} onChange={e => seteditDescription(e.target.value)}></textarea>
+                <textarea rows="4" cols="50" className="content-input" defaultValue={editDescription} onChange={e => seteditDescription(e.target.value)}></textarea>
                 </div>
                 <button className='submit-button'>Save Edit</button>
         </form>

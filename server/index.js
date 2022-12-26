@@ -18,13 +18,11 @@ app.get('/', (req, res) => {
 })
 
 
-//Open one specific page
-app.get('/pages/:id', async(req,res)=>{
+//Open the first page
+app.get('/pages/firstpage', async(req,res)=>{
   try {
-    const { id } = req.params;
-    const notepage = await pool.query("SELECT * FROM pages_central WHERE id = $1",[id]);
-
-    res.json(notepage.rows);
+    const firstpage = await pool.query("SELECT * FROM pages_central FETCH FIRST 1 ROWS ONLY;");
+    res.json(firstpage.rows);
   } catch (error) {
     console.error(err.message);
   }
