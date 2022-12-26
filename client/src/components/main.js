@@ -1,7 +1,7 @@
 import { React, useState, useEffect} from 'react'
 import './main.css';
 
-function Main({ activeNote, setactiveNote, showResults, setShowResults }) {
+function Main({ activeNote, setactiveNote, showResults, setShowResults, notes }) {
     const [title, setTitle] = useState([]);
     const [description, setDescription] = useState([]);
     const [editTitle, seteditTitle] = useState([]);
@@ -50,7 +50,7 @@ function Main({ activeNote, setactiveNote, showResults, setShowResults }) {
             body: JSON.stringify({"page_title": edittitle,
             "content": editbody})
           })
-          setShowResults(!showResults); 
+          setShowResults(!showResults);
         } catch (error) {
           console.error(error.message);
         }
