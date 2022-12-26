@@ -23,7 +23,7 @@ function sidebar({ notes, setactiveNote, showResults, setShowResults }) {
           </div>
             {notes.map((note)=>(
                 <div className='mt-3'>
-                 <button className='button-sidebar' key={note.id} onClick={()=>{setactiveNote(note);setShowResults(!showResults);}}>{note.page_title}</button>
+                 <button className='button-sidebar' key={note.id} onClick={()=>{setactiveNote(note);setShowResults(true);}}>{note.page_title}</button>
                  <button className='delete-button-sidebar' onClick={()=> deletePage(note.id)}>X</button>
                  </div>
             ))}
