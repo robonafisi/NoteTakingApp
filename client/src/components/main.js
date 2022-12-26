@@ -33,7 +33,8 @@ function Main({ activeNote, setactiveNote, showResults, setShowResults, notes })
       };
 
       useEffect(()=>{
-        if (activeNote = []){
+        console.log(activeNote);
+        if (activeNote.length === 0){
         fetch('http://localhost:5000/pages/firstpage')
           .then(response => response.json())
           .then(jsonData => setactiveNote(jsonData[0]))
