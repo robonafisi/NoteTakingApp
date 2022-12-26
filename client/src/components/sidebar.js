@@ -14,6 +14,7 @@ function sidebar({ notes, activeNote, setactiveNote, showResults, setShowResults
     }
   }
 
+
   return (
     <div className='main_div'>
         <div>

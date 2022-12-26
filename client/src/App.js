@@ -5,9 +5,9 @@ import Main from './components/main';
 
 function App() {
   const [notes, setNotes] = useState([]);
-  const [activeNote, setactiveNote] = useState([]);
   const [showResults, setShowResults] = useState(false);
-
+  const [activeNote, setactiveNote] = useState([]);
+  
   const getContent = async() =>{
     try {
       const response = await fetch("http://localhost:5000/pages");
