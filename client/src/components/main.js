@@ -1,12 +1,12 @@
 import { React, useState, useEffect} from 'react'
 import './main.css';
 
-function Main({ activeNote, editresults, setactiveNote }) {
+function Main({ activeNote, setactiveNote, showResults, setShowResults }) {
     const [title, setTitle] = useState([]);
     const [description, setDescription] = useState([]);
     const [editTitle, seteditTitle] = useState([]);
     const [editDescription, seteditDescription] = useState([]);
-    const [isEditMode, setIsEditMode] = useState(true);
+    //const [isEditMode, setIsEditMode] = useState(true);
 
 
     const onSubmitForm = async e =>{
@@ -27,10 +27,10 @@ function Main({ activeNote, editresults, setactiveNote }) {
         }
       };
 
-      const changeEditMode = async() => {
+      const changeshowResults = async() => {
         seteditTitle(activeNote.page_title);
         seteditDescription(activeNote.content);
-        setIsEditMode(!isEditMode);
+        setShowResults(!showResults);
       };
 
       useEffect(()=>{
@@ -51,7 +51,7 @@ function Main({ activeNote, editresults, setactiveNote }) {
             body: JSON.stringify({"page_title": edittitle,
             "content": editbody})
           })
-          setIsEditMode(!isEditMode); 
+          setShowResults(!showResults); 
         } catch (error) {
           console.error(error.message);
         }
@@ -87,7 +87,7 @@ function Main({ activeNote, editresults, setactiveNote }) {
       <div className='line'>
         <div className='space'>
           </div>
-        {isEditMode ?
+        {showResults ?
         <div>
         <div>
           <h1>{activeNote.page_title}</h1>
@@ -110,7 +110,7 @@ function Main({ activeNote, editresults, setactiveNote }) {
 
       </div>
       <div>
-          {isEditMode && editresults && <button className='edit-button' onClick={()=> changeEditMode(activeNote.id)}>EDIT</button>}
+          {showResults && <button className='edit-button' onClick={()=> changeshowResults(activeNote.id)}>EDIT</button>}
       </div>
     </div>
     

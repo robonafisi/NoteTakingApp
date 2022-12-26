@@ -28,7 +28,7 @@ function App() {
       <Sidebar notes={notes} setactiveNote={setactiveNote} showresults={showResults} setShowResults={setShowResults}/>
       </div>
       <div className='container'>
-      <Main activeNote={activeNote} setactiveNote={setactiveNote} editresults={showResults}/>
+      <Main activeNote={activeNote} setactiveNote={setactiveNote} showResults={showResults} setShowResults={setShowResults} />
       </div>
     </div>
   );
