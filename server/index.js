@@ -51,16 +51,19 @@ app.post('/newpage', async(req, res)=>{
     );
     res.json(newPage);
   } catch (error) {
-    console.error(err.message);
+    console.error(error.message);
   }
 });
 
 //Update a page
-app.put("", async(req,res)=>{
+app.put("/updatepage/:id", async(req,res)=>{
   try {
-    
+    const { id } = req.params;
+    const {title, content} = req.body;
+    const updatePagehere = await pool.query("UPDATE pages_central SET page_title=$1, content=$2 WHERE id=$3",
+    [title, content, id]);
   } catch (error) {
-    
+    console.error(error.message);
   }
 });
 

@@ -30,12 +30,19 @@ function Main({ notetaken, editresults }) {
 
       };
 
-      const pageUpdate = async() => {
+      const pageUpdate = async id => {
         try {
-          setIsEditMode(false);
+          const edittitle = title;
+          const editbody = description;
+          await fetch(`http://localhost:5000/updatepage/${id}`,{
+            method: "PUT",
+            headers: {"Content-Type": "application/json"},
+            body: JSON.stringify({"page_title": edittitle,
+            "content": editbody})
+          })
           
         } catch (error) {
-          
+          console.error(error.message);
         }
       };
 
@@ -72,14 +79,14 @@ function Main({ notetaken, editresults }) {
         <div>
           <p>{notetaken.content}</p>
         </div></div>:
-        <form onSubmit={onSubmitForm}>
+        <form onSubmit={pageUpdate(notetaken.id)}>
                 <div>
-                <input type="text" value={notetaken.page_title}/>
+                <input type="text" defaultValue={notetaken.page_title}/>
                 </div>
                 <div>
-                <textarea value={notetaken.content}></textarea>
+                <textarea defaultValue={notetaken.content}></textarea>
                 </div>
-                <button onClick={pageUpdate}>Save Page</button>
+                <button className='submit-button'>Save Edit</button>
         </form>}
 
       </div>
