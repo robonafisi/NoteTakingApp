@@ -18,6 +18,7 @@ function App() {
     }
   } ;
 
+
   useEffect(()=>{
     getContent();
   });
@@ -28,7 +29,7 @@ function App() {
       <Sidebar notes={notes} activeNote={activeNote} setactiveNote={setactiveNote} showresults={showResults} setShowResults={setShowResults}/>
       </div>
       <div className='container'>
-      <Main activeNote={activeNote} setactiveNote={setactiveNote} editresults={showResults} notes={notes}/>
+      <Main activeNote={activeNote} editresults={showResults}/>
       </div>
     </div>
   );

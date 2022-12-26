@@ -1,17 +1,13 @@
 import { React, useState, useEffect } from 'react'
 import './main.css';
 
-function Main({ activeNote, setactiveNote, editresults, notes }) {
+function Main({ activeNote, editresults }) {
     const [title, setTitle] = useState([]);
     const [description, setDescription] = useState([]);
     const [isEditMode, setIsEditMode] = useState(true);
     const [editTitle, seteditTitle] = useState([]);
     const [editDescription, seteditDescription] = useState([]);
 
-    // useEffect(()=>{
-    //   setactiveNote(notes[0]);
-    // },[])
-  
     const onSubmitForm = async e =>{
         e.preventDefault();
         try {
