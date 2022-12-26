@@ -21,7 +21,7 @@ app.get('/', (req, res) => {
 //Open the first page
 app.get('/pages/firstpage', async(req,res)=>{
   try {
-    const firstpage = await pool.query("SELECT * FROM pages_central FETCH FIRST 1 ROWS ONLY;");
+    const firstpage = await pool.query("SELECT * FROM pages_central ORDER BY id FETCH FIRST 1 ROWS ONLY;");
     res.json(firstpage.rows);
   } catch (error) {
     console.error(err.message);
@@ -31,7 +31,7 @@ app.get('/pages/firstpage', async(req,res)=>{
 //Get the list of pages
 app.get('/pages', async(req, res)=>{
   try {
-    const allpages = await pool.query("SELECT * FROM pages_central");
+    const allpages = await pool.query("SELECT * FROM pages_central ORDER BY id");
     res.json(allpages.rows);
   } catch (error) {
     console.error(err.message);
