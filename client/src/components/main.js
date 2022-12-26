@@ -1,12 +1,16 @@
-import { React, useState } from 'react'
+import { React, useState, useEffect } from 'react'
 import './main.css';
 
-function Main({ notetaken, editresults }) {
+function Main({ activeNote, setactiveNote, editresults, notes }) {
     const [title, setTitle] = useState([]);
     const [description, setDescription] = useState([]);
     const [isEditMode, setIsEditMode] = useState(true);
-    const [editTitle, seteditTitle] = useState([notetaken.page_title]);
-    const [editDescription, seteditDescription] = useState([notetaken.content]);
+    const [editTitle, seteditTitle] = useState([]);
+    const [editDescription, seteditDescription] = useState([]);
+
+    // useEffect(()=>{
+    //   setactiveNote(notes[0]);
+    // },[])
   
     const onSubmitForm = async e =>{
         e.preventDefault();
@@ -27,8 +31,8 @@ function Main({ notetaken, editresults }) {
       };
 
       const changeEditMode = async() => {
-        seteditTitle(notetaken.page_title);
-        seteditDescription(notetaken.content);
+        seteditTitle(activeNote.page_title);
+        seteditDescription(activeNote.content);
         setIsEditMode(!isEditMode);
       };
 
@@ -42,7 +46,7 @@ function Main({ notetaken, editresults }) {
             body: JSON.stringify({"page_title": edittitle,
             "content": editbody})
           })
-          
+          setIsEditMode(!isEditMode); 
         } catch (error) {
           console.error(error.message);
         }
@@ -76,19 +80,19 @@ function Main({ notetaken, editresults }) {
         {isEditMode ?
         <div>
         <div>
-          <h1>{notetaken.page_title}</h1>
+          <h1>{activeNote.page_title}</h1>
         </div>
         <div>
-          <p>{notetaken.content}</p>
+          <p>{activeNote.content}</p>
         </div>
         </div>:
         <div>
-        <form onSubmit={()=> pageUpdate(notetaken.id)}>
+        <form onSubmit={()=> pageUpdate(activeNote.id)}>
                 <div>
-                <input type="text" defaultValue={editTitle} onChange={e => seteditTitle(e.target.value)}/>
+                <input className="title-input" type="text" defaultValue={editTitle} onChange={e => seteditTitle(e.target.value)}/>
                 </div>
                 <div>
-                <textarea defaultValue={editDescription} onChange={e => seteditDescription(e.target.value)}></textarea>
+                <textarea className="content-input" defaultValue={editDescription} onChange={e => seteditDescription(e.target.value)}></textarea>
                 </div>
                 <button className='submit-button'>Save Edit</button>
         </form>
@@ -96,7 +100,7 @@ function Main({ notetaken, editresults }) {
 
       </div>
       <div>
-          {isEditMode && editresults && <button className='edit-button' onClick={()=> changeEditMode(notetaken.id)}>EDIT</button>}
+          {isEditMode && editresults && <button className='edit-button' onClick={()=> changeEditMode(activeNote.id)}>EDIT</button>}
       </div>
     </div>
     

@@ -79,3 +79,13 @@ body{
 .edit-button:hover {
   box-shadow: #121212 0 0 0 3px, transparent 0 0 0 0;
 }
+
+
+.title-input{
+  border: none;
+}
+
+
+.content-input{
+  border: none;
+}
