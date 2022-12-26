@@ -13,7 +13,7 @@ body{
 
 
 .submit-button {
-  background-color: #cdffd6;
+  background-color: #b8ffc5;
   border: 2px solid #422800;
   border-radius: 30px;
   box-shadow: #422800 4px 4px 0 0;
@@ -50,7 +50,7 @@ body{
 
 .edit-button {
   align-items: center;
-  background-color: rgb(253, 253, 112);
+  background-color: rgb(254, 254, 164);
   border-radius: 12px;
   box-shadow: transparent 0 0 0 3px,rgba(18, 18, 18, .1) 0 6px 20px;
   box-sizing: border-box;

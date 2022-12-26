@@ -37,7 +37,7 @@ function Main({ activeNote, setactiveNote, showResults, setShowResults, notes })
           .then(response => response.json())
           .then(jsonData => setactiveNote(jsonData[0]))
           .catch(error => console.error(error.message))
-          
+        console.log("The Effect is used");
       },[]);
 
       const pageUpdate = async id => {
