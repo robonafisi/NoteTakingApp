@@ -32,18 +32,21 @@ function Main({ activeNote, setactiveNote, showResults, setShowResults }) {
         setShowResults(!showResults);
       };
 
-      const pageUpdate = async id => {
+      const pageUpdate = async(e) => {
+        e.preventDefault();
         try {
-          console.log("pageUpdate running");
           const edittitle = editTitle;
           const editbody = editDescription;
+          const id = activeNote.id;
           await fetch(`http://localhost:5000/updatepage/${id}`,{
             method: "PUT",
             headers: {"Content-Type": "application/json"},
             body: JSON.stringify({"page_title": edittitle,
             "content": editbody})
           })
+          console.log();
           setShowResults(!showResults);
+          console.log();
         } catch (error) {
           console.error(error.message);
         }
@@ -96,7 +99,7 @@ function Main({ activeNote, setactiveNote, showResults, setShowResults }) {
         </div>
         </div>:
         <div>
-        <form onSubmit={()=> pageUpdate(activeNote.id)}>
+        <form onSubmit={pageUpdate}>
                 <div>
                 <input className="title-input" type="text" defaultValue={editTitle} onChange={e => seteditTitle(e.target.value)}/>
                 </div>
