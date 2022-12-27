@@ -49,6 +49,13 @@ function Main({ activeNote, setactiveNote, showResults, setShowResults }) {
         }
       };
 
+      useEffect(()=>{
+        fetch('http://localhost:5000/pages/firstpage')
+          .then(response => response.json())
+          .then(jsonData => setactiveNote(jsonData[0]))
+          .catch(error => console.error(error.message))
+      },[])
+
 
   return (
     <div>
