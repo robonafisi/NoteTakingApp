@@ -1,7 +1,7 @@
 import { React, useState, useEffect} from 'react'
 import './main.css';
 
-function Main({ activeNote, setactiveNote, showResults, setShowResults, notes }) {
+function Main({ activeNote, setactiveNote, showResults, setShowResults }) {
     const [title, setTitle] = useState([]);
     const [description, setDescription] = useState([]);
     const [editTitle, seteditTitle] = useState([]);
@@ -32,15 +32,9 @@ function Main({ activeNote, setactiveNote, showResults, setShowResults, notes })
         setShowResults(!showResults);
       };
 
-      useEffect(()=>{
-        fetch('http://localhost:5000/pages/firstpage')
-          .then(response => response.json())
-          .then(jsonData => setactiveNote(jsonData[0]))
-          .catch(error => console.error(error.message))
-        },[showResults]);
-
       const pageUpdate = async id => {
         try {
+          console.log("pageUpdate running");
           const edittitle = editTitle;
           const editbody = editDescription;
           await fetch(`http://localhost:5000/updatepage/${id}`,{

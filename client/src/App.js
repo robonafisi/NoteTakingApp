@@ -6,7 +6,7 @@ import Main from './components/main';
 function App() {
   const [notes, setNotes] = useState([]);
   const [showResults, setShowResults] = useState(true);
-  const [activeNote, setactiveNote] = useState([]);
+  const [activeNote, setactiveNote] = useState([notes[0]]);
 
   const getContent = async() =>{
     try {
@@ -18,6 +18,8 @@ function App() {
     }
   } ;
 
+  
+  
   useEffect(()=>{
     getContent();
   });
@@ -28,7 +30,7 @@ function App() {
       <Sidebar notes={notes} setactiveNote={setactiveNote} showresults={showResults} setShowResults={setShowResults}/>
       </div>
       <div className='container'>
-      <Main activeNote={activeNote} setactiveNote={setactiveNote} showResults={showResults} setShowResults={setShowResults} notes={notes} />
+      <Main activeNote={activeNote} setactiveNote={setactiveNote} showResults={showResults} setShowResults={setShowResults} />
       </div>
     </div>
   );
