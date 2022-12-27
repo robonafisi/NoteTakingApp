@@ -11,6 +11,10 @@ body{
     margin-top: 5%;
 }
 
+.form-style{
+  width: 80%;
+  margin-left: 130px;
+}
 
 .submit-button {
   background-color: #b8ffc5;

@@ -61,18 +61,18 @@ function Main({ activeNote, setactiveNote, showResults, setShowResults }) {
 
   return (
     <div>
-        <div>
+        <div className='mt-2'>
         <h1>
             Welcome to My Note
         </h1>
         </div>
-        <div>
+        <div className='mt-4'>
           <h3>
             Create a new page Here:
           </h3>
         </div>
-        <div>
-            <form onSubmit={onSubmitForm}>
+        <div className='mt-4'>
+            <form className="form-style" onSubmit={onSubmitForm}>
                 <div className='container row justify-content-md-center'>
                 <input className="col-lg-10" type="text" placeholder='Page Title' onChange={e => setTitle(e.target.value)} required/>
                 </div>
