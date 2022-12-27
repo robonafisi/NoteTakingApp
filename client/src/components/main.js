@@ -34,19 +34,18 @@ function Main({ activeNote, setactiveNote, showResults, setShowResults }) {
 
       const pageUpdate = async(e) => {
         e.preventDefault();
+        setactiveNote({"page_title":editTitle,"content":editDescription,"id":activeNote.id})
+        setShowResults(!showResults);
         try {
+          const id = activeNote.id;
           const edittitle = editTitle;
           const editbody = editDescription;
-          const id = activeNote.id;
           await fetch(`http://localhost:5000/updatepage/${id}`,{
             method: "PUT",
             headers: {"Content-Type": "application/json"},
             body: JSON.stringify({"page_title": edittitle,
             "content": editbody})
-          })
-          console.log();
-          setShowResults(!showResults);
-          console.log();
+          });
         } catch (error) {
           console.error(error.message);
         }
@@ -57,7 +56,7 @@ function Main({ activeNote, setactiveNote, showResults, setShowResults }) {
           .then(response => response.json())
           .then(jsonData => setactiveNote(jsonData[0]))
           .catch(error => console.error(error.message))
-      },[])
+      },[]);
 
 
   return (
@@ -69,7 +68,7 @@ function Main({ activeNote, setactiveNote, showResults, setShowResults }) {
         </div>
         <div>
           <h3>
-            Create a page Here:
+            Create a new page Here:
           </h3>
         </div>
         <div>
