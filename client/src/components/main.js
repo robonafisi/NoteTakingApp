@@ -62,12 +62,12 @@ function Main({ activeNote, setactiveNote, showResults, setShowResults }) {
   return (
     <div>
         <div className='mt-2'>
-        <h1>
+        <h1 className='first_header'>
             Welcome to My Note
         </h1>
         </div>
         <div className='mt-4'>
-          <h3>
+          <h3 className='second_header'>
             Create a new page Here:
           </h3>
         </div>

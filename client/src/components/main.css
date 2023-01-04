@@ -36,6 +36,8 @@ body{
 
 .submit-button:hover {
   box-shadow: #121212 0 0 0 3px, transparent 0 0 0 0;
+  background-color: #b8ffc5;
+  color: #000000;
 }
 
 
@@ -84,7 +86,16 @@ body{
   width: 40%;
 }
 
+.first_header{
+  font-family: "Trebuchet MS", sans-serif;
+  font-size: 2.6em;
+  letter-spacing: -2px;
+  text-transform: uppercase;
+}
 
-.content-input{
-  
+.second_header{
+  font-family: "Trebuchet MS", sans-serif;
+  font-size: 1.8em;
+  letter-spacing: -2px;
+  text-transform: uppercase;
 }
