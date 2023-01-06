@@ -1,8 +1,10 @@
-import React  from 'react'
+import { React, useState }  from 'react'
 import './sidebar.css';
 
 
-function sidebar({ notes, setactiveNote, showResults, setShowResults }) {
+function Sidebar({ notes, setactiveNote, showResults, setShowResults }) {
+
+  const [isActive, setIsActive] = useState(false);
 
   const deletePage = async id => {
     try {
@@ -23,7 +25,7 @@ function sidebar({ notes, setactiveNote, showResults, setShowResults }) {
           </div>
             {notes.map((note)=>(
                 <div className='mt-3'>
-                 <button className='button-sidebar' key={note.id} onClick={()=>{setactiveNote(note);setShowResults(true);}}>{note.page_title}</button>
+                 <button className={isActive ? 'button-sidebar selected' : 'button-sidebar'} key={note.id} onClick={()=>{setactiveNote(note); setShowResults(true); setIsActive(current => !current);}}>{note.page_title}</button>
                  <button className='delete-button-sidebar' onClick={()=> deletePage(note.id)}>X</button>
                  </div>
             ))}
@@ -32,4 +34,4 @@ function sidebar({ notes, setactiveNote, showResults, setShowResults }) {
   )
 }
 
-export default sidebar;
+export default Sidebar;

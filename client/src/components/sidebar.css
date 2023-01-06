@@ -51,6 +51,10 @@
   box-shadow: #121212 0 0 0 3px, transparent 0 0 0 0;
 }
 
+.selected {
+    box-shadow: #d8ffe0 0 0 0 3px, transparent 0 0 0 0;
+}
+
 .delete-button-sidebar{
     background-color: rgb(255, 102, 102);
     border: none;
