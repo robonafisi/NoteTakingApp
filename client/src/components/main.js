@@ -6,6 +6,7 @@ function Main({ activeNote, setactiveNote, showResults, setShowResults }) {
     const [description, setDescription] = useState([]);
     const [editTitle, seteditTitle] = useState([]);
     const [editDescription, seteditDescription] = useState([]);
+    const [darkMode, setdarkMode] = useState(false);
 
 
     const onSubmitForm = async e =>{
@@ -61,6 +62,9 @@ function Main({ activeNote, setactiveNote, showResults, setShowResults }) {
 
   return (
     <div>
+        <div>
+          <button className='dark_mode_button'>Dark Mode</button>
+        </div>
         <div className='mt-2'>
         <h1 className='first_header'>
             Welcome to My Note
