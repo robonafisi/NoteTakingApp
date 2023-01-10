@@ -6,7 +6,6 @@ function Main({ activeNote, setactiveNote, showResults, setShowResults }) {
     const [description, setDescription] = useState([]);
     const [editTitle, seteditTitle] = useState([]);
     const [editDescription, seteditDescription] = useState([]);
-    const [darkMode, setdarkMode] = useState(false);
 
 
     const onSubmitForm = async e =>{

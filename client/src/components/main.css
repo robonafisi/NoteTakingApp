@@ -103,5 +103,15 @@ body{
   align-items: center;
   background-color: rgb(0, 0, 0);
   color: azure;
-  border-radius: 10px;
+  border-radius: 15px;
+  padding: 0.4rem 0.6rem;
 }
+
+.dark {
+    background-color: #333;
+    color: #fff;
+  }
+  .light {
+    background-color: #fff;
+    color: #333;
+  }
