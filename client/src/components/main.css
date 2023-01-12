@@ -1,5 +1,5 @@
 body{
-    background-color: rgb(253, 252, 246);
+    background-color: var(--background);
 }
 
 .line{
@@ -87,6 +87,7 @@ body{
 }
 
 .first_header{
+  color: var(--text-primary);
   font-family: "Trebuchet MS", sans-serif;
   font-size: 2.6em;
   letter-spacing: -2px;
@@ -111,7 +112,20 @@ body{
     background-color: #333;
     color: #fff;
   }
-  .light {
+.light {
     background-color: #fff;
     color: #333;
+  }
+
+  :root {
+    --background: white;
+    --text-primary: black;
+    --text-secondary: royalblue;
+    --accent: purple;
+  }
+  [data-theme='dark'] {
+    --background: black;
+    --text-primary: white;
+    --text-secondary: grey;
+    --accent: darkred;
   }

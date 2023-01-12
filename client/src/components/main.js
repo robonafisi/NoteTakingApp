@@ -6,6 +6,7 @@ function Main({ activeNote, setactiveNote, showResults, setShowResults }) {
     const [description, setDescription] = useState([]);
     const [editTitle, seteditTitle] = useState([]);
     const [editDescription, seteditDescription] = useState([]);
+    const [theme, setTheme] = useState('light');
 
 
     const onSubmitForm = async e =>{
@@ -58,9 +59,19 @@ function Main({ activeNote, setactiveNote, showResults, setShowResults }) {
           .catch(error => console.error(error.message))
       },[]);
 
+      const changeTheme = async() => {
+        setTheme("Dark");
+        console.log(theme);
+      };
+
 
   return (
     <div>
+        <div>
+          <button onClick={changeTheme}>
+            Change Theme
+          </button>
+        </div>
         <div className='mt-2'>
         <h1 className='first_header'>
             Welcome to My Note
