@@ -60,8 +60,13 @@ function Main({ activeNote, setactiveNote, showResults, setShowResults }) {
       },[]);
 
       const changeTheme = async() => {
-        setTheme("dark");
-        console.log(theme);
+        if (theme == "dark")
+        {
+          setTheme("light");
+        }
+        else {
+          setTheme("dark");
+        }
       };
 
 
@@ -85,10 +90,10 @@ function Main({ activeNote, setactiveNote, showResults, setShowResults }) {
         <div className='mt-4'>
             <form className="form-style" onSubmit={onSubmitForm}>
                 <div className='container row justify-content-md-center'>
-                <input className="col-lg-10" type="text" placeholder='Page Title' onChange={e => setTitle(e.target.value)} required/>
+                <input className="col-lg-10 first-input" type="text" placeholder='Page Title' onChange={e => setTitle(e.target.value)} required/>
                 </div>
                 <div className='container row justify-content-md-center mt-2'>
-                <textarea className="col-lg-10" placeholder='Page Content' rows="4" cols="50" onChange={e => setDescription(e.target.value)} required></textarea>
+                <textarea className="col-lg-10 second-input" placeholder='Page Content' rows="4" cols="50" onChange={e => setDescription(e.target.value)} required></textarea>
                 </div>
                 <button className='btn btn-success mt-3 submit-button'>Save Page</button>
             </form>
