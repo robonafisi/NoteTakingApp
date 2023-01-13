@@ -60,12 +60,15 @@ function Main({ activeNote, setactiveNote, showResults, setShowResults }) {
       },[]);
 
       const changeTheme = async() => {
+        console.log("Item activated!");
         if (theme == "dark")
         {
           setTheme("light");
+          console.log("Light!!!!");
         }
         else {
           setTheme("dark");
+           
         }
       };
 

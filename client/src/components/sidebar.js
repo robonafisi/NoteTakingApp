@@ -2,7 +2,7 @@ import { React, useState }  from 'react'
 import './sidebar.css';
 
 
-function Sidebar({ notes, setactiveNote, showResults, setShowResults }) {
+function Sidebar({ notes, setactiveNote, showResults, setShowResults, theme, setTheme }) {
 
   const deletePage = async id => {
     try {
@@ -17,7 +17,7 @@ function Sidebar({ notes, setactiveNote, showResults, setShowResults }) {
 
   return (
     <div className='main_div'>
-        <div>
+        <div className='sidebar-design'>
           <div className='line-button mt-3'>
             <h3>Notes</h3>
           </div>

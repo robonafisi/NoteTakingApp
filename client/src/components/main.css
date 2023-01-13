@@ -6,6 +6,7 @@
 }
 [data-theme='dark'] {
   --background: black;
+  --secbackground: #000626;
   --text-primary: white;
   --text-secondary: grey;
   --accent: darkred;
@@ -132,4 +133,14 @@
 .light {
     background-color: #fff;
     color: #333;
+  }
+
+  .first-input{
+    background-color: var(--secbackground);
+    color: var(--text-primary);
+  }
+
+  .second-input{
+    background-color: var(--secbackground);
+    color: var(--text-primary);
   }
