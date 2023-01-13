@@ -60,13 +60,13 @@ function Main({ activeNote, setactiveNote, showResults, setShowResults }) {
       },[]);
 
       const changeTheme = async() => {
-        setTheme("Dark");
+        setTheme("dark");
         console.log(theme);
       };
 
 
   return (
-    <div>
+    <div className='theme-body-colors' data-theme={theme}>
         <div>
           <button onClick={changeTheme}>
             Change Theme
