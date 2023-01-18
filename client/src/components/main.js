@@ -103,7 +103,7 @@ function Main({ activeNote, setactiveNote, showResults, setShowResults }) {
         </div>
 
         <br></br>
-    <div>
+    <div className="wrapper-for-notes">
       <div className='line'>
         <div className='space'>
           </div>

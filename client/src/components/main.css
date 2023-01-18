@@ -144,3 +144,7 @@
     background-color: var(--secbackground);
     color: var(--text-primary);
   }
+
+  .wrapper-for-notes{
+    border-style: solid;
+  }
