@@ -127,12 +127,12 @@
 }
 
 .dark {
-    background-color: #333;
-    color: #fff;
+  background-color: #333;
+  color: #fff;
   }
 .light {
-    background-color: #fff;
-    color: #333;
+  background-color: #fff;
+  color: #333;
   }
 
   .first-input{
@@ -146,5 +146,8 @@
   }
 
   .wrapper-for-notes{
+    float: center;
+    margin-left: 7%;
     border-style: solid;
+    width: 90%;
   }

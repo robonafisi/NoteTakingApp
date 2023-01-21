@@ -130,7 +130,7 @@ function Main({ activeNote, setactiveNote, showResults, setShowResults }) {
 
       </div>
       <div>
-          {showResults && <button className='edit-button' onClick={()=> changeshowResults(activeNote.id)}>EDIT</button>}
+          {showResults && <button className='edit-button mb-5' onClick={()=> changeshowResults(activeNote.id)}>EDIT</button>}
       </div>
     </div>
     
