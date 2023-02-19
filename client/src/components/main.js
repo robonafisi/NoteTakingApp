@@ -74,6 +74,7 @@ function Main({ activeNote, setactiveNote, showResults, setShowResults }) {
 
 
   return (
+
     <div className='theme-body-colors' data-theme={theme}>
         <div>
           <button onClick={changeTheme}>
