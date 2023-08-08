@@ -76,11 +76,11 @@ function Main({ activeNote, setactiveNote, showResults, setShowResults }) {
   return (
 
     <div className='theme-body-colors' data-theme={theme}>
-        <div>
+        {/* <div>
           <button onClick={changeTheme}>
             Change Theme
           </button>
-        </div>
+        </div> */}
         <div className='mt-2'>
         <h1 className='first_header'>
             Welcome to My Note
